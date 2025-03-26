@@ -1,3 +1,7 @@
+const express = require("express");
+const router = express.Router();
+
+// Danh sách sản phẩm
 const product = [
   {
     id: 1,
@@ -57,4 +61,12 @@ const product = [
   }
 
 ]
-module.exports = product
+
+// API trả về danh sách sản phẩm
+router.get("/", (req, res) => {
+  res.json(product);
+});
+
+module.exports = router;
+
+
